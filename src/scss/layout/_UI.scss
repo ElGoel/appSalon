@@ -1,0 +1,58 @@
+body {
+    background-color: $negro;
+}
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.7rem;
+}
+
+.contenedor-estetica {
+    @include tablet {
+        @include telefono {
+            h1 {
+                font-size: 4rem;
+            }
+            height: 100vh; /* View x Height este codigo funciona para tomar el espacio completo del html con un elemento */
+            @include grid(2, $separacion / 2);
+        }
+    }
+
+
+    .imagen {
+        height: 30rem;
+        background-image: url('../img/1.jpg');
+        background-size: cover;
+        background-position: center center;
+        @include tablet {
+            @include telefono {
+                height: auto;
+            }
+        }
+    }
+}
+
+.app {
+    width: 95%;
+    margin: 0 auto;
+    padding-top: $separacion / 2;
+
+    .seccion {
+        display: none; /* este codigo desaparece el contenido */
+        margin-top: $separacion / 2;
+        @include tablet {
+            h2 {
+                font-size: 3.6rem;
+            }
+        }
+        // &:first-of-type {   /* este hace aparecer el primer */
+        //     display: block;
+        // }
+    }
+}
+
+.mostrar-seccion {
+    display: block!important;
+}
