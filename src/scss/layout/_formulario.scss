@@ -1,0 +1,40 @@
+.formulario {
+    width: 100%;
+    margin-bottom: 2.2rem;
+}
+
+.campo {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+
+    label {
+        // el factor de crecimiento "flex" mide los pixeles  que tenga el espacio y se los suma dependiendo de la cantidad que tenga 1 o varios elementos
+        // en este ejemplo el label tiene 0 de crecimiento y 0 para que sea mas pequeño y medira solo 10rem o 100px sera la base
+        flex: 0 0 10rem;
+        color: $blanco;
+    }
+    // [] los corchetes sirven para seleccionar atributos como type="text" como ejemplo label [type="text"] {}
+    input {
+        // este input recibe solo 1, quiere decir que va a restar todos los pixeles que al label le sobren para tomar todo el espacio disponible
+        flex: 1;
+        padding: $separacion / 4;
+        border-radius: 1rem;
+        border: none;
+        width: 100%;
+    }
+}
+
+.alerta {
+    padding: $separacion / 2;
+    text-align: center;
+    color: $blanco;
+    width: 100%;
+    display: block;
+    margin-top: 2rem;
+
+    &.error {
+        background-color: rgb(194,0,0);
+    }
+}
+
